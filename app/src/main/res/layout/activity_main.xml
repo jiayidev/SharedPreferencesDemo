@@ -1,45 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:padding="16dp"
+    android:background="@drawable/timg3">
 
+
+    <!--  当之有一个EditText或者AutoCompleteTextView的时候，进入画面时是默认得到焦点的。 要想去除焦点，可以在auto之前加一个0像素的layout，并设置他先得到焦点。 -->
     <LinearLayout
+        android:layout_width="0px"
+        android:layout_height="0px"
+        android:focusable="true"
+        android:focusableInTouchMode="true" />
+
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:id="@+id/txt_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_margin="10dp"
-            android:text="用户名:"
-            android:textSize="20sp" />
+        android:layout_centerInParent="true">
 
         <EditText
             android:id="@+id/edit_name"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:hint="请输入密码"
-            android:textColorHint="@color/colorPrimaryDark" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+            android:layout_height="50dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/comm_input_selector"
+            android:drawableLeft="@drawable/username_img"
+            android:drawablePadding="10dp"
+            android:hint="请输入用密码"
+            android:inputType="textPassword"
+            android:maxLines="18"
+            android:text=""
+            android:textColor="#999999"
+            android:textSize="18sp" />
 
         <Button
             android:id="@+id/btn_login"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_margin="10dp"
-            android:text="登录"
+            android:layout_height="50dp"
+            android:layout_below="@id/edit_name"
+            android:layout_margin="5dp"
+            android:background="@drawable/comm_btn_selector"
+            android:gravity="center"
+            android:text="登&#160;&#160;&#160;&#160;&#160;&#160;录"
+            android:textColor="#ffffff"
             android:textSize="20sp" />
-    </LinearLayout>
+    </RelativeLayout>
 
-</LinearLayout>
+</RelativeLayout>
